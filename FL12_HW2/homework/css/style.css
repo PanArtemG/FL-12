@@ -2,19 +2,21 @@
     box-shadow: 0 0 10px 0 rgba(61, 55, 61, 0.7);
 }
 
+section, .tm-content-box, .text, .blocks, .form-control[name="contact_message"] {
+    position: relative;
+}
+
+.tm-section-description {
+    line-height: 30px;
+    text-indent: 25px;
+}
+
 .tm-nav-item-link:hover {
     background: lightskyblue;
     color: #fff
 }
 
-.tm-content-box {
-    position: relative;
-}
-
-.tm-content-box:nth-child(1):before,
-.tm-content-box:nth-child(2):before,
-.tm-content-box:nth-child(5):before,
-.tm-content-box:nth-child(6):before {
+section:before {
     content: '';
     display: block;
     position: absolute;
@@ -46,36 +48,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-indent: 1.5em;
 }
 
-.tm-team-img {
+.tm-team-img, .tm-team-img img {
     width: 100%;;
-}
-
-.tm-team-img > img {
-    width: 100%;
 }
 
 .box-bg:hover {
     background: lightgrey;
 }
 
-.heading > .padding-medium > h2 {
+.heading h2 {
     text-align: center;
     color: lightskyblue;
 }
 
-.heading > .padding-medium > ol > li {
+.heading li {
     list-style-type: lower-alpha;
 }
 
-.heading > .padding-medium > ol > li:hover:before {
+.heading li:hover:before {
     content: '>';
-}
-
-.text {
-    position: relative;
 }
 
 .text:after {
@@ -87,10 +80,6 @@
     top: 0;
 }
 
-.blocks {
-    position: relative;
-}
-
 .blocks:before {
     content: '';
     display: block;
@@ -100,5 +89,61 @@
     border: 30px solid transparent;
     border-top: 30px solid lightskyblue;
     transform: rotate(135deg);
+}
+
+.blocks .tm-team-description-container {
+    display: block;
+}
+
+.blocks .tm-section-description:last-child {
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    font-style: italic;
+}
+
+.box-work {
+    padding: 10px;
+}
+
+.box-work:nth-child(odd) {
+    color: white;
+    background: lightskyblue;
+}
+
+.box-work p {
+    font-style: italic;
+}
+
+.box-work p:first-letter {
+    font-weight: bold;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid lightskyblue;
+}
+
+.form-control:focus {
+    background: lightskyblue;
+}
+
+.form-control[name="contact_message"] {
+    border: 1px solid lightskyblue;
+}
+
+.form-control[name="contact_message"]:focus {
+    background: none;
+}
+
+#contact_message:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../img/email-icon.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
