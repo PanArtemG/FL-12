@@ -6,14 +6,17 @@ section, .tm-content-box, .text, .blocks, .form-control[name="contact_message"] 
     position: relative;
 }
 
+.form-control:focus, .btn:hover, .box-work:nth-child(odd), .tm-nav-item-link:hover {
+    background: lightskyblue;
+}
+
 .tm-section-description {
     line-height: 30px;
     text-indent: 25px;
 }
 
 .tm-nav-item-link:hover {
-    background: lightskyblue;
-    color: #fff
+    color: white;
 }
 
 section:before {
@@ -107,7 +110,6 @@ section:before {
 
 .box-work:nth-child(odd) {
     color: white;
-    background: lightskyblue;
 }
 
 .box-work p {
@@ -118,32 +120,60 @@ section:before {
     font-weight: bold;
 }
 
+.contact-form {
+    text-align: right;
+}
+
 .form-control {
     border: none;
     border-bottom: 1px solid lightskyblue;
 }
 
-.form-control:focus {
-    background: lightskyblue;
+.btn:hover {
+    border: 1px solid lightskyblue;
 }
 
-.form-control[name="contact_message"] {
+.form-control[name="contact_message"], .btn {
     border: 1px solid lightskyblue;
+    background: url(../img/email-icon.png) no-repeat bottom 10px right 10px;
+    background-size: 30px 30px
 }
 
 .form-control[name="contact_message"]:focus {
     background: none;
 }
 
-#contact_message:after {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 20px;
-    background: url("../img/email-icon.png");
-    background-size: cover;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+.btn {
+    display: inline-block;
+    padding: 1em 1.5em;
+    background: white;
+    color: lightskyblue;
+}
+
+@media print {
+    .tm-sidebar, .tm-team-img, #about {
+        display: none;
+    }
+
+    .tm-main-content {
+        padding-top: 0;
+    }
+
+    .tm-team-description-container {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .tm-section-description {
+        /*line-height: 30px;*/
+        text-indent: 0;
+    }
+
+
+
+
+
+
+
 }
 
