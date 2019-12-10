@@ -19,7 +19,7 @@ section, .tm-content-box, .text, .blocks, .form-control[name="contact_message"] 
     color: white;
 }
 
-section:before {
+section:before, .blocks:before {
     content: '';
     display: block;
     position: absolute;
@@ -40,6 +40,18 @@ section:before {
 
 .tm-banner-text {
     text-shadow: 5px 5px 3px #333;
+    animation-name: slideToCenter;
+    animation-duration: 3.5s;
+    cubic-bezier(0, 0, 1, 1);
+}
+
+@keyframes slideToCenter {
+    0% {
+        transform: translateX(70%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 .flex-2-col {
@@ -58,6 +70,7 @@ section:before {
 }
 
 .box-bg:hover {
+    font-style: italic;
     background: lightgrey;
 }
 
@@ -83,16 +96,6 @@ section:before {
     top: 0;
 }
 
-.blocks:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -30px;
-    left: -30px;
-    border: 30px solid transparent;
-    border-top: 30px solid lightskyblue;
-    transform: rotate(135deg);
-}
 
 .blocks .tm-team-description-container {
     display: block;
@@ -139,6 +142,11 @@ section:before {
     background-size: 30px 30px
 }
 
+.form-control[name="contact_message"] {
+    background: url(../img/email-icon.png) no-repeat bottom 10px right 10px;
+    background-size: 30px 30px
+}
+
 .form-control[name="contact_message"]:focus {
     background: none;
 }
@@ -150,30 +158,47 @@ section:before {
     color: lightskyblue;
 }
 
+ .tm-main-content, .padding-medium, .heading, .tm-banner, .carousel {
+    /*padding: 0;*/
+}
+
 @media print {
-    .tm-sidebar, .tm-team-img, #about {
+
+    .tm-sidebar, .tm-team-img, #about, section:before, .blocks:before, .text:after, .blocks .tm-content-box:last-child, #contact, .img-contact-us, .carousel-indicators {
         display: none;
     }
 
-    .tm-main-content {
-        padding-top: 0;
+    .tm-main-content, .padding-medium, .heading, .tm-banner, .carousel, .tm-footer {
+        padding: 0;
+        margin: 0;
+    }
+
+    .heading .padding-medium, .tm-team-description-container, .tm-content-box, .carousel {
+        text-align: center;
     }
 
     .tm-team-description-container {
         max-width: 100%;
-        text-align: center;
     }
 
     .tm-section-description {
-        /*line-height: 30px;*/
+        line-height: normal;
         text-indent: 0;
     }
 
+    .heading ol {
+        display: inline-block;
+        width: 300px;
+        padding-left: 0;
+    }
 
+    .heading li {
+        list-style: none;
+        text-align: right;
+    }
 
-
-
-
-
+    .heading li:nth-child(even) {
+        text-align: left;
+    }
 }
 
