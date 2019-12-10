@@ -138,8 +138,6 @@ section:before, .blocks:before {
 
 .form-control[name="contact_message"], .btn {
     border: 1px solid lightskyblue;
-    background: url(../img/email-icon.png) no-repeat bottom 10px right 10px;
-    background-size: 30px 30px
 }
 
 .form-control[name="contact_message"] {
