@@ -42,7 +42,7 @@ section:before, .blocks:before {
     text-shadow: 5px 5px 3px #333;
     animation-name: slideToCenter;
     animation-duration: 3.5s;
-    transition-timing-function: cubic-bezier(0, 0, 0.7, 1);
+    transition-timing-function: cubic-bezier(0, 0, 0.3, 1);
 }
 
 @keyframes slideToCenter {
