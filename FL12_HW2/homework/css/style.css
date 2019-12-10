@@ -158,10 +158,6 @@ section:before, .blocks:before {
     color: lightskyblue;
 }
 
- .tm-main-content, .padding-medium, .heading, .tm-banner, .carousel {
-    /*padding: 0;*/
-}
-
 @media print {
 
     .tm-sidebar, .tm-team-img, #about, section:before, .blocks:before, .text:after, .blocks .tm-content-box:last-child, #contact, .img-contact-us, .carousel-indicators {
