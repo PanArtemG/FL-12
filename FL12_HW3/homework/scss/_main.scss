@@ -1,0 +1,212 @@
+%container {
+}
+
+* {
+  padding: 0;
+  margin: 0;
+
+  body {
+    width: 1920px;
+  }
+
+  .header {
+    width: 100%;
+    margin-bottom: 36px;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-bottom-right-radius: 785px 272px;
+    color: $headerContentColor;
+    background-image: url("../img/m-h-day.jpg");
+    background-size: cover;
+
+    .header-wrap {
+      padding: 0 0 172px 200px;
+
+      .landing-logo {
+        display: flex;
+        width: 50px;
+        align-items: center;
+        margin-bottom: 70px;
+
+        img {
+          display: block;
+          margin-top: 28px;
+          margin-right: 14px;
+        }
+
+        p {
+          margin-top: 23px;
+          font-size: 24px;
+          font-weight: 900;
+        }
+
+        span {
+          display: block;
+          position: relative;
+          left: 10px;
+          font-weight: normal;
+          font-size: 11px;
+        }
+      }
+
+      .header_heading {
+        width: 500px;
+        margin-bottom: 33px;
+        font-size: 70px;
+        font-weight: bold;
+        line-height: 75px;
+        letter-spacing: 1px;
+      }
+
+      .header_text {
+        margin-bottom: 60px;
+        white-space: pre-line;
+        line-height: 24px;
+        letter-spacing: 0.4px;
+      }
+
+      div {
+        width: 490px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .header_button {
+          padding: 15px 40px;
+          font-size: 18px;
+          font-weight: 700;
+          color: white;
+          background-color: $secondaryColor;
+          border: none;
+          border-radius: 5px;
+        }
+
+        .login {
+          font-size: 20px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Hind', sans-serif;
+
+    .section_text {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .section_card_wrap {
+      width: 1117px;
+      box-sizing: border-box;
+      margin-bottom: 110px;
+
+      .section_card {
+        display: grid;
+        grid-template-columns: 473px auto;
+        margin-bottom: 25px;
+        border-radius: 6px;
+        background-color: $colorBackground;
+
+        .section_card_img {
+          border-radius: 6px;
+          width: 433px;
+          margin: 20px;
+        }
+
+        .section_card_right_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 625px;
+          color: $contentColor;
+
+          .section_card_heading {
+            font-size: 23px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            margin-top: 20px;
+          }
+
+          .section_card_text {
+            padding: 0 70px;
+            text-align: justify;
+          }
+
+          .section_link {
+            margin-top: 15px;
+            color: $contentColor;
+          }
+        }
+      }
+    }
+
+    .section_banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 1200px;
+      box-sizing: border-box;
+      padding: 10px 160px;
+      position: absolute;
+      bottom: 0;
+      border-radius: 5px;
+      background: linear-gradient(to left, #2C5ACC, 50%, $secondaryColor);
+
+      .section_banner_text_wrap {
+        .section_banner_heading {
+
+        }
+
+        .section_banner_text {
+
+        }
+      }
+
+      .section_banner_button {
+        border: none;
+        background-color: $secondaryColor;
+        border-radius: 3px;
+      }
+    }
+
+  }
+
+  .footer {
+    padding: 0 200px;
+    background-color: $colorBackground;
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 140px 0 40px 0;
+      font-family: 'Hind', sans-serif;
+      color: $contentColor;
+
+      .landing-logo {
+
+      }
+
+      .footer_text {
+        width: 300px;
+      }
+
+      .footer-cr {
+
+      }
+    }
+  }
+}
+
+
+
+
