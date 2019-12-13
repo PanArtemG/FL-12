@@ -1,11 +1,24 @@
-$headerContentColor: #2C2F3C;
+$headerAndSectionTitleAndBannerTitleFontCol: #2C2F3C;
 $headerBgi: "../img/m-h-day.jpg";
 
-$contentColor: #C0C3CE;
-$contentBgc: #21232E;
+$logoSpanPosY: 0;
+$logoSpanPosX: 10px;
 
-$mainColor: #14A0C7;
-$secondaryColor: #699900;
-$mainBgc: #ffffff;
+$colors: (
+        mainColor: #699900,
+        secondaryColor: #14A0C7,
+        contentColor: #C0C3CE,
+        contentBgc: #21232E,
+        mainBgc: #ffffff
+);
+
+$titleFont: 'Source Sans Pro', sans-serif;
+$contentFont: 'Hind', sans-serif;
+//$contentColor: #C0C3CE;
+//$contentBgc: #21232E;
+//
+//$mainColor: #699900;
+//$secondaryColor: #14A0C7;
+//$mainBgc: #ffffff;
 
 $gradientSecColor: #2E5CD3;

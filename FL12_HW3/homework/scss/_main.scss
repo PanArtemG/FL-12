@@ -3,10 +3,12 @@
   font-size: 18px;
   font-weight: 700;
   color: white;
-  background-color: $secondaryColor;
+  background-color: $mainColor;
   border: none;
   border-radius: 5px;
 }
+
+
 
 * {
   padding: 0;
@@ -18,15 +20,15 @@
 
   .header {
     width: 100%;
-    margin-bottom: 36px;
     font-family: 'Source Sans Pro', sans-serif;
-    border-bottom-right-radius: 785px 272px;
-    color: $headerContentColor;
-    background-image: url($headerBgi);
-    background-size: cover;
+    background-color: map-get($colors, mainBgc);
+    color: $headerAndSectionTitleAndBannerTitleFontCol;
 
     .header-wrap {
       padding: 0 0 172px 200px;
+      background-image: url($headerBgi);
+      background-size: cover;
+      border-bottom-right-radius: 785px 272px;
 
 
       .landing-logo {
@@ -34,6 +36,7 @@
         width: 50px;
         align-items: center;
         margin-bottom: 70px;
+        font-family: $contentFont;
 
         img {
           margin-top: 28px;
@@ -41,7 +44,7 @@
         }
 
         p {
-          margin-top: 23px;
+          margin-top: 20px;
           font-size: 24px;
           font-weight: 900;
         }
@@ -49,9 +52,11 @@
         span {
           display: block;
           position: relative;
-          left: 10px;
+          top: $logoSpanPosY;
+          left: $logoSpanPosX;
           font-weight: normal;
           font-size: 11px;
+          line-height: 0;
         }
       }
 
@@ -73,7 +78,7 @@
           position: absolute;
           bottom: 0;
           left: 0;
-          background-color: $mainColor;
+          background-color: map-get($colors, secondaryColor) ;
           z-index: -1;
         }
       }
@@ -108,12 +113,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 36px;
     position: relative;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Hind', sans-serif;;
+    background-color: $mainBgc;
 
     .section_text {
+      font-family: $titleFont;
       font-size: 40px;
       font-weight: 600;
+      color: $headerAndSectionTitleAndBannerTitleFontCol;
       margin-bottom: 25px;
       position: relative;
       z-index: 1;
@@ -122,11 +131,11 @@
         content: '';
         display: block;
         height: 50px;
-        width: 185px;
+        width: 182px;
         position: absolute;
-        bottom: 17px;
-        left: 221px;
-        background-color: $mainColor;
+        bottom: 7px;
+        left: 205px;
+        background-color: $secondaryColor;
         z-index: -1;
       }
     }
@@ -167,6 +176,7 @@
 
           .section_card_text {
             padding: 0 70px;
+            font-family: $contentFont;
             text-align: justify;
           }
 
@@ -184,20 +194,21 @@
       justify-content: space-between;
       width: 1200px;
       box-sizing: border-box;
-      padding: 10px 160px;
+      padding: 0 160px;
       position: absolute;
       bottom: -73px;
       border-radius: 5px;
-      background: linear-gradient(to left, $gradientSecColor, 50%, $secondaryColor);
+      background: linear-gradient(to left, $gradientSecColor, 50%, $mainColor);
 
       .section_banner_text_wrap {
-        padding-top: 10px;
-        padding-bottom: 30px;
+        padding-top: 23px;
+        padding-bottom: 40px;
 
         .section_banner_heading {
-          margin-bottom: 5px;
+          margin-bottom: 12px;
+          font-family: $titleFont;
           font-size: 32px;
-          font-weight: 600;
+          font-weight: 900;
           position: relative;
           z-index: 1;
 
@@ -205,13 +216,17 @@
             content: '';
             display: block;
             height: 50px;
-            width: 66px;
+            width: 68px;
             position: absolute;
-            bottom: 11px;
-            left: 132px;
-            background-color: $mainColor;
+            bottom: 5px;
+            left: 128px;
+            background-color: $secondaryColor;
             z-index: -1;
           }
+        }
+
+        .section_banner_heading {
+          color: $headerAndSectionTitleAndBannerTitleFontCol;
         }
 
         .section_banner_text {
@@ -240,6 +255,7 @@
       .landing-logo {
         display: flex;
         align-items: center;
+        font-family: $contentFont;
 
         img {
           margin-right: 13px;
@@ -253,9 +269,11 @@
         span {
           display: block;
           position: relative;
-          left: 10px;
+          top: $logoSpanPosY;
+          left: $logoSpanPosX;
           font-weight: normal;
           font-size: 11px;
+          line-height: 0;
         }
       }
 
