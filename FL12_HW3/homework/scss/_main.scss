@@ -3,7 +3,7 @@
   font-size: 18px;
   font-weight: 700;
   color: white;
-  background-color: $mainColor;
+  background-color:  map-get($colors, mainColor);
   border: none;
   border-radius: 5px;
 }
@@ -22,7 +22,7 @@
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: map-get($colors, mainBgc);
-    color: $headerAndSectionTitleAndBannerTitleFontCol;
+    color: map-get($colors, mainTitleColor);
 
     .header-wrap {
       padding: 0 0 172px 200px;
@@ -116,13 +116,13 @@
     padding-top: 36px;
     position: relative;
     font-family: 'Hind', sans-serif;;
-    background-color: $mainBgc;
+    background-color: map-get($colors, mainBgc);
 
     .section_text {
       font-family: $titleFont;
       font-size: 40px;
       font-weight: 600;
-      color: $headerAndSectionTitleAndBannerTitleFontCol;
+      color: map-get($colors, mainTitleColor);
       margin-bottom: 25px;
       position: relative;
       z-index: 1;
@@ -135,7 +135,7 @@
         position: absolute;
         bottom: 7px;
         left: 205px;
-        background-color: $secondaryColor;
+        background-color: map-get($colors, secondaryColor);
         z-index: -1;
       }
     }
@@ -150,7 +150,7 @@
         grid-template-columns: 473px auto;
         margin-bottom: 25px;
         border-radius: 6px;
-        background-color: $contentBgc;
+        background-color: map-get($colors, contentBgc) ;
 
         .section_card_img {
           border-radius: 6px;
@@ -164,7 +164,7 @@
           align-items: center;
           justify-content: center;
           width: 625px;
-          color: $contentColor;
+          color: map-get($colors, contentColor) ;
 
           .section_card_heading {
             font-size: 23px;
@@ -182,7 +182,7 @@
 
           .section_link {
             margin-top: 15px;
-            color: $contentColor;
+            color: map-get($colors, contentColor);
           }
         }
       }
@@ -198,7 +198,7 @@
       position: absolute;
       bottom: -73px;
       border-radius: 5px;
-      background: linear-gradient(to left, $gradientSecColor, 50%, $mainColor);
+      background: linear-gradient(to left, map-get($colors, gradientSecColor), 50%, map-get($colors, mainColor));
 
       .section_banner_text_wrap {
         padding-top: 23px;
@@ -220,17 +220,17 @@
             position: absolute;
             bottom: 5px;
             left: 128px;
-            background-color: $secondaryColor;
+            background-color: map-get($colors, secondaryColor);
             z-index: -1;
           }
         }
 
         .section_banner_heading {
-          color: $headerAndSectionTitleAndBannerTitleFontCol;
+          color: map-get($colors, mainTitleColor);
         }
 
         .section_banner_text {
-          color: $contentColor;
+          color: map-get($colors, contentColor);
         }
       }
 
@@ -242,7 +242,7 @@
 
   .footer {
     padding: 0 200px;
-    background-color: $contentBgc;
+    background-color: map-get($colors, contentBgc);
 
     .footer-wrap {
       display: flex;
@@ -250,7 +250,7 @@
       justify-content: space-between;
       padding: 125px 0 40px 0;
       font-family: 'Hind', sans-serif;
-      color: $contentColor;
+      color:  map-get($colors, contentColor);
 
       .landing-logo {
         display: flex;

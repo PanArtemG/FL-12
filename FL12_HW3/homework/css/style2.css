@@ -1,86 +1,205 @@
-/*
-Error: Undefined variable: "$colors".
-        on line 24 of E:/Front End Education/EPAM/FL-12/FL12_HW3/homework/scss/_main.scss
-        from line 3 of E:\Front End Education\EPAM\FL-12\FL12_HW3\homework\scss\style2.scss
+* .header .header-wrap div .header_button, * .section .section_banner .section_banner_button {
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background-color: #E3AC00;
+  border: none;
+  border-radius: 5px; }
 
-Backtrace:
-E:/Front End Education/EPAM/FL-12/FL12_HW3/homework/scss/_main.scss:24
-E:\Front End Education\EPAM\FL-12\FL12_HW3\homework\scss\style2.scss:3
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:186:in `perform_arg'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:133:in `block in _perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:133:in `each'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:133:in `each_with_index'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:133:in `each'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:133:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/funcall.rb:133:in `_perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:402:in `visit_prop'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:88:in `block in with_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:88:in `with_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:20:in `render'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:290:in `render'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:400:in `run'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
-C:/Program Files (x86)/Koala/bin/sass:22:in `load'
-C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$colors\".\A         on line 24 of E:/Front End Education/EPAM/FL-12/FL12_HW3/homework/scss/_main.scss\A         from line 3 of E:\Front End Education\EPAM\FL-12\FL12_HW3\homework\scss\style2.scss"; }
+* {
+  padding: 0;
+  margin: 0; }
+  * body {
+    width: 1920px; }
+  * .header {
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #21232E;
+    color: #FFF9E4; }
+    * .header .header-wrap {
+      padding: 0 0 172px 200px;
+      background-image: url("../img/m-h-night.jpg");
+      background-size: cover;
+      border-bottom-right-radius: 785px 272px; }
+      * .header .header-wrap .landing-logo {
+        display: flex;
+        width: 50px;
+        align-items: center;
+        margin-bottom: 70px;
+        font-family: "Fresca", sans-serif; }
+        * .header .header-wrap .landing-logo img {
+          margin-top: 28px;
+          margin-right: 10px; }
+        * .header .header-wrap .landing-logo p {
+          margin-top: 20px;
+          font-size: 24px;
+          font-weight: 900; }
+        * .header .header-wrap .landing-logo span {
+          display: block;
+          position: relative;
+          top: 5px;
+          left: 3px;
+          font-weight: normal;
+          font-size: 11px;
+          line-height: 0; }
+      * .header .header-wrap .header_heading {
+        width: 500px;
+        margin-bottom: 33px;
+        font-size: 70px;
+        font-weight: bold;
+        line-height: 75px;
+        letter-spacing: 1px;
+        position: relative;
+        z-index: 1; }
+        * .header .header-wrap .header_heading:after {
+          content: '';
+          display: block;
+          height: 50px;
+          width: 300px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #FF4E33;
+          z-index: -1; }
+      * .header .header-wrap .header_text {
+        margin-bottom: 60px;
+        white-space: pre-line;
+        line-height: 24px;
+        letter-spacing: 0.4px; }
+      * .header .header-wrap div {
+        width: 490px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        * .header .header-wrap div .login {
+          font-size: 20px;
+          color: #ffffff; }
+  * .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 36px;
+    position: relative;
+    font-family: 'Hind', sans-serif;
+    background-color: #21232E; }
+    * .section .section_text {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 40px;
+      font-weight: 600;
+      color: #FFF9E4;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1; }
+      * .section .section_text:after {
+        content: '';
+        display: block;
+        height: 50px;
+        width: 182px;
+        position: absolute;
+        bottom: 7px;
+        left: 205px;
+        background-color: #FF4E33;
+        z-index: -1; }
+    * .section .section_card_wrap {
+      width: 1117px;
+      box-sizing: border-box;
+      margin-bottom: 187px; }
+      * .section .section_card_wrap .section_card {
+        display: grid;
+        grid-template-columns: 473px auto;
+        margin-bottom: 25px;
+        border-radius: 6px;
+        background-color: #3B3F50; }
+        * .section .section_card_wrap .section_card .section_card_img {
+          border-radius: 6px;
+          width: 433px;
+          margin: 20px; }
+        * .section .section_card_wrap .section_card .section_card_right_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 625px;
+          color: #CEC6AE; }
+          * .section .section_card_wrap .section_card .section_card_right_container .section_card_heading {
+            font-size: 23px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            margin-top: 20px; }
+          * .section .section_card_wrap .section_card .section_card_right_container .section_card_text {
+            padding: 0 70px;
+            font-family: "Fresca", sans-serif;
+            text-align: justify; }
+          * .section .section_card_wrap .section_card .section_card_right_container .section_link {
+            margin-top: 15px;
+            color: #CEC6AE; }
+    * .section .section_banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 1200px;
+      box-sizing: border-box;
+      padding: 0 160px;
+      position: absolute;
+      bottom: -73px;
+      border-radius: 5px;
+      background: linear-gradient(to left, #96324E, 50%, #E3AC00); }
+      * .section .section_banner .section_banner_text_wrap {
+        padding-top: 23px;
+        padding-bottom: 40px; }
+        * .section .section_banner .section_banner_text_wrap .section_banner_heading {
+          margin-bottom: 12px;
+          font-family: "Source Sans Pro", sans-serif;
+          font-size: 32px;
+          font-weight: 900;
+          position: relative;
+          z-index: 1; }
+          * .section .section_banner .section_banner_text_wrap .section_banner_heading:after {
+            content: '';
+            display: block;
+            height: 50px;
+            width: 68px;
+            position: absolute;
+            bottom: 5px;
+            left: 128px;
+            background-color: #FF4E33;
+            z-index: -1; }
+        * .section .section_banner .section_banner_text_wrap .section_banner_heading {
+          color: #FFF9E4; }
+        * .section .section_banner .section_banner_text_wrap .section_banner_text {
+          color: #CEC6AE; }
+  * .footer {
+    padding: 0 200px;
+    background-color: #3B3F50; }
+    * .footer .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 125px 0 40px 0;
+      font-family: 'Hind', sans-serif;
+      color: #CEC6AE; }
+      * .footer .footer-wrap .landing-logo {
+        display: flex;
+        align-items: center;
+        font-family: "Fresca", sans-serif; }
+        * .footer .footer-wrap .landing-logo img {
+          margin-right: 13px; }
+        * .footer .footer-wrap .landing-logo p {
+          font-size: 24px;
+          font-weight: 900; }
+        * .footer .footer-wrap .landing-logo span {
+          display: block;
+          position: relative;
+          top: 5px;
+          left: 3px;
+          font-weight: normal;
+          font-size: 11px;
+          line-height: 0; }
+      * .footer .footer-wrap .footer_text {
+        width: 300px;
+        line-height: 19px;
+        margin-top: 15px;
+        letter-spacing: -0.8px; }

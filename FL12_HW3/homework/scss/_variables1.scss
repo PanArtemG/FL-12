@@ -1,24 +1,19 @@
-$headerAndSectionTitleAndBannerTitleFontCol: #2C2F3C;
 $headerBgi: "../img/m-h-day.jpg";
 
 $logoSpanPosY: 0;
 $logoSpanPosX: 10px;
 
+$titleFont: 'Source Sans Pro', sans-serif;
+$contentFont: 'Hind', sans-serif;
+
 $colors: (
+        mainTitleColor: #2C2F3C,
         mainColor: #699900,
         secondaryColor: #14A0C7,
         contentColor: #C0C3CE,
         contentBgc: #21232E,
-        mainBgc: #ffffff
+        mainBgc: #ffffff,
+        gradientSecColor: #2E5CD3
+
 );
 
-$titleFont: 'Source Sans Pro', sans-serif;
-$contentFont: 'Hind', sans-serif;
-//$contentColor: #C0C3CE;
-//$contentBgc: #21232E;
-//
-//$mainColor: #699900;
-//$secondaryColor: #14A0C7;
-//$mainBgc: #ffffff;
-
-$gradientSecColor: #2E5CD3;
