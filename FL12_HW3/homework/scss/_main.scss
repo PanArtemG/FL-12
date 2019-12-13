@@ -8,8 +8,6 @@
   border-radius: 5px;
 }
 
-
-
 * {
   padding: 0;
   margin: 0;
@@ -29,7 +27,6 @@
       background-image: url($headerBgi);
       background-size: cover;
       border-bottom-right-radius: 785px 272px;
-
 
       .landing-logo {
         display: flex;
@@ -286,7 +283,3 @@
     }
   }
 }
-
-
-
-
