@@ -4,10 +4,6 @@
     font-family: 'Merriweather', serif;
 }
 
-a {
-    text-decoration: none;
-}
-
 .container {
     padding: 0 100px;
 }
@@ -30,24 +26,28 @@ a {
     width: 80%;
 }
 
+.link {
+    text-decoration: none;
+}
+
 .logo-link {
     font-weight: 900;
     color: #000000;
     letter-spacing: 1px;
 }
 
-.nav-menu a {
+.nav-menu .link {
     display: inline-block;
     padding: 30px 20px;
     text-transform: capitalize;
     color: #777777;
 }
 
-.nav-menu a:hover {
+.nav-menu .link:hover {
     color: #bfba55;
 }
 
-.nav-menu a:last-child {
+.nav-menu .link:last-child {
     padding-right: 0;
 }
 
