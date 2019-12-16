@@ -32,7 +32,7 @@ a {
 
 .logo-link {
     font-weight: 900;
-    color: #5E555E;
+    color: #000000;
     letter-spacing: 1px;
 }
 
@@ -40,18 +40,17 @@ a {
     display: inline-block;
     padding: 30px 20px;
     text-transform: capitalize;
-    color: #9890A1;
+    color: #777777;
 }
 
 .nav-menu a:hover {
-    color: #F2DD9C;
+    color: #bfba55;
 }
 
 .nav-menu a:last-child {
     padding-right: 0;
 }
 
-/**/
 .header-title-section {
     display: flex;
     flex-direction: column;
@@ -78,36 +77,40 @@ a {
 .header-title {
     color: #ffffff;
     margin-bottom: 35px;
+    font-size: 62px;
     z-index: 2;
 }
 
 .header-subtitle {
-    color: #F2DD9C;
+    color: #bfba55;
     margin-bottom: 55px;
     z-index: 2;
 }
 
 .btn {
     padding: 1.1em 2em;
-    color: #5E555E;
+    color: #777777;
     background: #ffffff;
     cursor: pointer;
     border-radius: 2em;
     z-index: 2;
 }
-/**/
 
 .posts-list-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px 50px 110px;
+    padding: 25px 50px 40px;
 }
 
 .post-wrap {
     max-width: 950px;
     padding: 85px 0 90px 0;
-    border-bottom: 1px solid #5E555E;
+    border-bottom: 1px solid #777777;
+}
+
+.post-wrap:last-child {
+    border-bottom: none;
 }
 
 .post-img {
@@ -126,15 +129,11 @@ a {
     display: flex;
     align-items: center;
     margin: 20px 0 30px 0;
-    color: #5E555E;
+    color: #777777;
 }
 
 .post-info-item {
     margin-right: 15px;
-}
-
-.post-info-item:last-child {
-    margin-left: 30px;
 }
 
 .post-author-wrap {
@@ -145,17 +144,25 @@ a {
 .post-author-avatar {
     width: 42px;
     border-radius: 42px;
+    margin-right: 10px;
+}
+
+.icon-comments {
+    width: 17px;
+    height: 17px;
     margin-right: 5px;
+    fill: #777777;
 }
 
 .post-text {
     line-height: 30px;
-    color: #5E555E;
+    color: #777777;
 }
 
 .post-btn {
+    padding: .8em 1.4em;
     font-weight: bold;
-    border: 1px solid #5E555E;
+    border: 1px solid #777777;
 }
 
 .footer {
@@ -163,23 +170,37 @@ a {
     justify-content: center;
     padding: 100px 0;
     background: #000000;
-    color: white;
+    color: #ffffff;
 }
 
 .footer-content-wrap {
     display: flex;
     justify-content: space-between;
     max-width: 950px;
+    line-height: 2;
+}
+
+.footer-title {
+    font-size: 27px;
 }
 
 .footer-item {
     display: flex;
-    flex-basis: 45%;
+
     flex-direction: column;
+}
+
+.footer-item-epam {
+    max-width: 49%;
+}
+
+.footer-item-contact {
+    margin-right: 30px;
 }
 
 .footer-content {
     font-style: normal;
+    font-size: 15px;
     color: #5E555E;
-    margin: 25px 0 0;
+    margin: 5px 0 0;
 }
