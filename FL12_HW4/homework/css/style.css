@@ -17,13 +17,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    height: 100vh;
 }
 
 .nav-section-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    background: white;
 }
 
 .link {
@@ -31,9 +35,14 @@
 }
 
 .logo-link {
+    margin-left: 10%;
     font-weight: 900;
     color: #000000;
     letter-spacing: 1px;
+}
+
+.nav-menu {
+    margin-right: 10%;
 }
 
 .nav-menu .link {
@@ -56,6 +65,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 100vh;
     padding: 300px 0 270px 0;
     background-image: url("../img/home-bg.jpg");
     background-size: cover;
