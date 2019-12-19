@@ -15,12 +15,16 @@
     padding: 0;
 }
 
-.container {
-    width: 100%;
-    max-width: 480px;
-    padding: 0 10px;
-    margin: 0 auto;
+.body {
     background-color:#0b192f;
+}
+
+.container {
+    width: 480px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    margin: 0 auto;
+    font-family: roboto, serif;
 }
 
 .flex {
@@ -38,7 +42,7 @@
 
 .header-nav-icon-wrap {
     max-width: 25px;
-    margin-bottom: 75px;
+    margin-bottom: 70px;
 }
 
 .header-nav-icon {
@@ -56,7 +60,7 @@
 }
 
 .header-logo {
-    font-size: 40px;
+    font-size: 2.4em;
     font-weight: 100;
 }
 
@@ -65,30 +69,29 @@
 }
 /**/
 .awesome_story-wrap {
-    padding: 110px 60px 50px 45px;
+    padding: 110px 60px 50px 40px;
     margin-bottom: 15px;
     color: #ffffff;
     background-image: url('../img/post0.jpg');
-    background-size: 234%;
-    background-position: -330px;
+    background-size: 248%;
+    background-position: -362px;
 }
 
 .title {
-    margin-bottom: 25px;
-    font-family: roboto, serif;
-    font-size: 57px;
+    margin-bottom: 20px;
+    font-size: 3em;
     font-weight: 100;
-    letter-spacing: -2px;
-    line-height: 56px;
+    letter-spacing: 2px;
+    line-height: 53px;
     color: #ffffff;
 }
 
 .content {
-    font-family: roboto, serif;
     font-size: 17px;
     font-weight: 100;
     line-height: 25px;
     color: #ffffff;
+    word-spacing: -2px;
 }
 
 .post-wrap, .news-wrap {
@@ -102,8 +105,12 @@
 }
 
 .post-content-wrap, .news-content-wrap {
-    padding: 40px 70px 40px 40px;
+    padding: 40px;
     position: relative;
+}
+
+.post-title {
+    letter-spacing: 1px;
 }
 
 
@@ -114,7 +121,7 @@
 .post-data {
     flex-direction: column;
     align-items: center;
-    margin: 20px 20px 0 0;
+    margin: 25px 10px 0 0;
     position: absolute;
     top: 0;
     right: 0;
@@ -128,6 +135,7 @@
 
 .post-data-day {
     margin: 0;
+    font-size: 3.2em;
 }
 
 .post-data-month {
