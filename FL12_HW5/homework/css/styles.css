@@ -10,9 +10,131 @@
   --bg-footer-color: #024161;
 }
 
-body {
-  font-family: roboto;
+* {
+    margin: 0;
+    padding: 0;
 }
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 0 10px;
+    margin: 0 auto;
+    background-color:#0b192f;
+}
+
+.flex {
+    display: flex;
+}
+
+.header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0 60px;
+    margin-bottom: 25px;
+    background-color: #024161;
+}
+
+.header-nav-icon-wrap {
+    max-width: 25px;
+    margin-bottom: 75px;
+}
+
+.header-nav-icon {
+    height: 100%;
+    width: 100%;
+}
+
+.header-nav {
+    display: none;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.header-logo {
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.header-logo-color-part {
+    color: #D12767;
+}
+/**/
+.awesome_story-wrap {
+    padding: 110px 60px 50px 45px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    background-image: url('../img/post0.jpg');
+    background-size: 234%;
+    background-position: -330px;
+}
+
+.title {
+    margin-bottom: 25px;
+    font-family: roboto, serif;
+    font-size: 57px;
+    font-weight: 100;
+    letter-spacing: -2px;
+    line-height: 56px;
+    color: #ffffff;
+}
+
+.content {
+    font-family: roboto, serif;
+    font-size: 17px;
+    font-weight: 100;
+    line-height: 25px;
+    color: #ffffff;
+}
+
+.post-wrap, .news-wrap {
+    list-style: none;
+}
+
+.post-img, .news-img {
+    display: block;
+    height: 325px;
+    width: 100%;
+}
+
+.post-content-wrap, .news-content-wrap {
+    padding: 40px 70px 40px 40px;
+    position: relative;
+}
+
+
+.post-3 .post-title {
+    padding-right: 45px;
+}
+
+.post-data {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 20px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.2;
+}
+
+
+.post-5 > .post-data {
+    position: relative;
+}
+
+.post-data-day {
+    margin: 0;
+}
+
+.post-data-month {
+    font-size: 30px;
+    margin: 0;
+}
+
 .post-1 {
 	background: #9d27b0;
 }
@@ -29,4 +151,7 @@ body {
 	background: #2d95bb;
 }
 
+.news-content-wrap {
+    padding: 40px 40px 40px 40px;
+}
 /* Your styles go here */
