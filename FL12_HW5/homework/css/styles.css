@@ -1,5 +1,6 @@
 @import url(styles-xs.css) screen and (max-width: 480px);
 @import url(styles-s.css) screen and (min-width: 481px) and (max-width: 768px);
+@import url(styles-s.css) screen and (min-width: 769px);
 
 * {
     margin: 0;
