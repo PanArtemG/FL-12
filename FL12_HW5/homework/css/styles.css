@@ -375,6 +375,9 @@
         left: -350px;
     }
 
+    .post-img {
+        height: 100%;
+    }
     .post-5 > .post-data {
         position: absolute;
         top: 0;
