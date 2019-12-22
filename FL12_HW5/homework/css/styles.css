@@ -1,15 +1,3 @@
-/*@import url(styles-xs.css) screen and (max-width: 480px);*/
-/*@import url(styles-s.css) screen and (min-width: 481px) and (max-width: 768px);*/
-/*@import url(styles-s.css) screen and (min-width: 769px);*/
-
-:root {
-    --bg-color--dark: #0b192f;
-    --bg-color--header: #024161;
-    --link: #fff;
-    --link--hover: #1f52a4;
-    --bg-footer-color: #024161;
-}
-
 * {
     margin: 0;
     padding: 0;
