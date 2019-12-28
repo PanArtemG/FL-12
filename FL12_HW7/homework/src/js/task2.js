@@ -3,7 +3,7 @@ let prize = null;
 let possiblePrizeFirstTry = 100;
 let possiblePrizeSecondTry = 50;
 let possiblePrizeThreeTry = 25;
-let attempts = null;
+let attempts = 3;
 let minNumber = 0;
 let maxNumber = 8;
 
@@ -11,8 +11,7 @@ while (userConfirm) {
     attempts = 3;
     let randomNumber = Math.ceil(Math.random() * (Math.floor(maxNumber) - Math.ceil(minNumber)) + Math.ceil(minNumber));
     console.log(randomNumber);
-    let userNumber = +prompt
-    (`Choose a roulette pocket number from ${minNumber} to ${maxNumber} \n
+    let userNumber = +prompt(`Choose a roulette pocket number from ${minNumber} to ${maxNumber} \n
                 Attempts left: ${attempts} \n
                 Total prize: ${prize} \n
                 Possible prize on current attempt: ${possiblePrizeFirstTry}$`,
@@ -30,8 +29,7 @@ while (userConfirm) {
         }
     } else {
         attempts -= 1;
-        userNumber = +prompt
-        (`Choose a roulette pocket number from ${minNumber} to ${maxNumber} \n
+        userNumber = +prompt(`Choose a roulette pocket number from ${minNumber} to ${maxNumber} \n
                 Attempts left: ${attempts} \n
                 Total prize: ${prize} \n
                 Possible prize on current attempt: ${possiblePrizeSecondTry}$`,
@@ -50,8 +48,7 @@ while (userConfirm) {
             }
         } else {
             attempts -= 1;
-            userNumber = +prompt
-            (`Choose a roulette pocket number from ${minNumber} to ${maxNumber} \n
+            userNumber = +prompt(`Choose a roulette pocket number from ${minNumber} to ${maxNumber} \n
                 Attempts left: ${attempts} \n
                 Total prize: ${prize} \n
                 Possible prize on current attempt: ${possiblePrizeThreeTry}$`,
