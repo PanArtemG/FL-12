@@ -8,24 +8,16 @@ const DB = {
         pass: 'AdminPass'
     }
 };
-
-const emailDB = {
-    user: 'user@gmail.com',
-    admin: 'admin@gmail.com'
-};
-
-const passDB = {
-    user: 'UserPass',
-    admin: 'AdminPass'
-};
-
-let email = prompt('Enter yours email', "user@gmail.com");
+let email = prompt('Enter yours email', 'user@gmail.com');
 let pass = null;
-let status = false;
+let check = false;
+let minLengthEmail = 5;
+let minLengthPass = 6;
+
 
 if (!email) {
     alert('Canceled')
-} else if (email.length < 5) {
+} else if (email.length < minLengthEmail) {
     alert('I don\'t know any emails having name length less than 5 symbols')
 } else if (email.match(/@/)) {
     if (email === DB.user.email) {
@@ -33,9 +25,8 @@ if (!email) {
         if (!pass) {
             alert('Canceled')
         } else if (pass === DB.user.pass) {
-            status = confirm('Do you want to change your password?');
-            console.log(status);
-            if (!status) {
+            check = confirm('Do you want to change your password?');
+            if (!check) {
                 alert('You have failed the change.');
             } else {
                 pass = prompt('Enter yours password', 'UserPass');
@@ -45,9 +36,9 @@ if (!email) {
                     pass = prompt('Enter NEW password', 'Password');
                     if (!pass) {
                         alert('Canceled')
-                    } else if (pass.length < 6) {
+                    } else if (pass.length < minLengthPass) {
                         alert('It’s too short password. Sorry.')
-                    } else if (pass.length >= 6) {
+                    } else if (pass.length >= minLengthPass) {
                         let confirmPass = prompt('Enter your NEW password again', 'Password');
                         if ( pass === confirmPass) {
                             DB.user.pass = confirmPass;
@@ -64,9 +55,9 @@ if (!email) {
         if (!pass) {
             alert('Canceled')
         } else if (pass === DB.admin.pass) {
-            status = confirm('Do you want to change your password?');
-            console.log(status);
-            if (!status) {
+            check = confirm('Do you want to change your password?');
+            console.log(check);
+            if (!check) {
                 alert('You have failed the change.');
             } else {
                 pass = prompt('Enter yours password', 'AdminPass');
@@ -76,9 +67,9 @@ if (!email) {
                     pass = prompt('Enter NEW password', 'Password');
                     if (!pass) {
                         alert('Canceled')
-                    } else if (pass.length < 6) {
+                    } else if (pass.length < minLengthPass) {
                         alert('It’s too short password. Sorry.')
-                    } else if (pass.length >= 6) {
+                    } else if (pass.length >= minLengthPass) {
                         let confirmPass = prompt('Enter your NEW password again', 'Password');
                         if ( pass === confirmPass) {
                             DB.admin.pass = confirmPass;
