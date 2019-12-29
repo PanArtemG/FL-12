@@ -1,14 +1,18 @@
 let userConfirm = confirm('Do you want to play a game?');
-let prize = null;
-let possiblePrizeFirstTry = 100;
-let possiblePrizeSecondTry = 50;
-let possiblePrizeThreeTry = 25;
-let attempts = 3;
+let prize = 0;
+let defaultPossiblePrizeFirstTry = 100;
+let defaultPossiblePrizeSecondTry = 50;
+let defaultPossiblePrizeThreeTry = 25;
+let possiblePrizeFirstTry = defaultPossiblePrizeFirstTry;
+let possiblePrizeSecondTry = defaultPossiblePrizeSecondTry;
+let possiblePrizeThreeTry = defaultPossiblePrizeThreeTry;
+let defaultMaxNumber = 8;
 let minNumber = 0;
-let maxNumber = 8;
+let maxNumber = defaultMaxNumber;
+let increaseMaxNumber = 4;
 
 while (userConfirm) {
-    attempts = 3;
+    let attempts = 3;
     let randomNumber = Math.ceil(Math.random() * (Math.floor(maxNumber) - Math.ceil(minNumber)) + Math.ceil(minNumber));
     console.log(randomNumber);
     let userNumber = +prompt(`Choose a roulette pocket number from ${minNumber} to ${maxNumber} \n
@@ -20,7 +24,7 @@ while (userConfirm) {
         prize += possiblePrizeFirstTry;
         userConfirm = confirm(`Congratulation, you won!   Your prize is: ${prize}$. Do you want to continue?`);
         if (userConfirm) {
-            maxNumber += 4;
+            maxNumber += increaseMaxNumber;
             possiblePrizeFirstTry += possiblePrizeFirstTry;
             possiblePrizeSecondTry += possiblePrizeSecondTry;
             possiblePrizeThreeTry += possiblePrizeThreeTry;
@@ -39,7 +43,7 @@ while (userConfirm) {
             prize += possiblePrizeSecondTry;
             userConfirm = confirm(`Congratulation, you won!   Your prize is: ${prize}$. Do you want to continue?`);
             if (userConfirm) {
-                maxNumber += 4;
+                maxNumber += increaseMaxNumber;
                 possiblePrizeFirstTry += possiblePrizeFirstTry;
                 possiblePrizeSecondTry += possiblePrizeSecondTry;
                 possiblePrizeThreeTry += possiblePrizeThreeTry;
@@ -58,7 +62,7 @@ while (userConfirm) {
                 prize += possiblePrizeThreeTry;
                 userConfirm = confirm(`Congratulation, you won!   Your prize is: ${prize}$. Do you want to continue?`);
                 if (userConfirm) {
-                    maxNumber += 4;
+                    maxNumber += increaseMaxNumber;
                     possiblePrizeFirstTry += possiblePrizeFirstTry;
                     possiblePrizeSecondTry += possiblePrizeSecondTry;
                     possiblePrizeThreeTry += possiblePrizeThreeTry;
@@ -67,10 +71,10 @@ while (userConfirm) {
                 }
             } else {
                 prize = 0;
-                maxNumber = 8;
-                possiblePrizeFirstTry = 100;
-                possiblePrizeSecondTry = 50;
-                possiblePrizeThreeTry = 25;
+                maxNumber = defaultMaxNumber;
+                possiblePrizeFirstTry = defaultPossiblePrizeFirstTry;
+                possiblePrizeSecondTry = defaultPossiblePrizeSecondTry;
+                possiblePrizeThreeTry = defaultPossiblePrizeThreeTry;
                 alert(`Thank you for your participation. Your prize is: ${prize}$`);
                 userConfirm = confirm('Do you want to play the game again?')
             }
