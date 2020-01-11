@@ -1,7 +1,8 @@
 const convert = (...arg) => {
     const arrConvertArg = [];
-    for (let i = 0; i < arg.length; i++)
-        (typeof (arg[i]) === 'string') ? arrConvertArg.push(+arg[i]) : arrConvertArg.push(arg[i] + '');
+    for (let i = 0; i < arg.length; i++) {
+        typeof arg[i] === 'string' ? arrConvertArg.push(+arg[i]) : arrConvertArg.push(arg[i] + '');
+    }
     return arrConvertArg
 };
 
@@ -59,7 +60,7 @@ const getArrayOfKeys = (arr, key) => {
 
 const substitute = arr => {
     let transformArr = [];
-    mapArray(arr, el => (el <= 30) ? transformArr.push('*') : transformArr.push(el));
+    mapArray(arr, el => el <= 30 ? transformArr.push('*') : transformArr.push(el));
     return transformArr
 };
 
@@ -68,7 +69,7 @@ const getPastDay = (date, day) => {
     const dayInMs = 86400000;
     const convertDayInMs = day * dayInMs;
 
-    return (new Date(date.getTime() - convertDayInMs)).getDate()
+    return new Date(date.getTime() - convertDayInMs).getDate()
 };
 
 const formatDate = date => {
