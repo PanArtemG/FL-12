@@ -70,8 +70,6 @@ class Fighter {
     dealDamage(damage) {
         this.#hp -= damage;
         this.#hp <= 0 ? this.#wins++ : null;
-
-        console.log(`dealDamage : ${this.#hp} Wins ${this.#wins}`);
     }
 
     heal(healPoint) {
@@ -81,17 +79,40 @@ class Fighter {
     }
 
     addWin() {
-        this.#wins++
+        return  this.#wins += 1
     }
 
     addLoss() {
-        this.#losses++
+        return  this.#losses += 1
     }
 }
 
 
-let firsFighter = new Fighter({name: "Maximus", damage: 25, hp: 100, strength: 50, agility: 15});
-let secondFighters = new Fighter({name: "Titan", damage: 50, hp: 10, strength: 25, agility: 25});
+let firsFighter = new Fighter({name: "Maximus", damage: 25, hp: 100, strength: 50, agility: 30});
+let secondFighters = new Fighter({name: "Titan", damage: 50, hp: 100, strength: 20, agility: 20});
+battle(firsFighter, secondFighters)
 
-console.log(firsFighter.attack(secondFighters));
+
+function battle(firstFighter, secondFighter) {
+    if (firstFighter.getHealth && secondFighter.getHealth) {
+        firstFighter.attack(secondFighter);
+        if (secondFighter.getHealth) {
+            secondFighter.attack(firstFighter);
+            if (firstFighter.getHealth) {
+                battle(firstFighter, secondFighter)
+            } else {
+                secondFighter.addWin;
+                firstFighter.addLoss;
+                console.log(`${secondFighter.getName} WON! WINS : ${secondFighter.getWins}`)
+            }
+        } else {
+            console.log(`${firstFighter.getName} WON! WINS : ${firstFighter.getWins}`)
+        }
+    } else {
+        new Error(`The fighters are not ready! ${firstFighter.getName} : ${firstFighter.getHealth} & ${secondFighter.getName} : ${secondFighter.getHealth} Restore HP`)
+    }
+}
+
+// battle(firsFighter, secondFighters)
+// console.log(firsFighter.attack(secondFighters));
 // console.log(secondFighters.getHealth);
