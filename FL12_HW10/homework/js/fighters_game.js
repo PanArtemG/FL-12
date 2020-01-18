@@ -2,6 +2,7 @@ class Fighter {
     #name;
     #damage;
     #hp;
+    #maxHp;
     #strength;
     #agility;
     #wins;
@@ -11,6 +12,7 @@ class Fighter {
         this.#name = fighter.name;
         this.#damage = fighter.damage;
         this.#hp = fighter.hp;
+        this.#maxHp = fighter.hp;
         this.#strength = fighter.strength;
         this.#agility = fighter.agility;
         this.#wins = 0;
@@ -29,9 +31,8 @@ class Fighter {
         return this.#hp
     }
 
-    set setHealth(hp) {
-        console.log(`serHealth ${hp}`);
-        return this.#hp = hp
+    get getMaxHealth() {
+        return this.#maxHp
     }
 
     get getStrength() {
@@ -42,8 +43,16 @@ class Fighter {
         return this.#agility
     }
 
-    get logCombatHistory () {
-        console.log(`name: ${this.getName}, wins : ${this.#wins}, losses : ${this.#losses}`)
+    get getWins() {
+        return this.#wins
+    }
+
+    get getLosses() {
+        return this.#losses
+    }
+
+    get logCombatHistory() {
+        console.log(`Name: ${this.getName}, Wins : ${this.#wins}, Losses : ${this.#losses}`)
     }
 
     attack(defender) {
@@ -59,21 +68,30 @@ class Fighter {
     }
 
     dealDamage(damage) {
-        console.log(this);
-        return this.#hp -= damage
+        this.#hp -= damage;
+        this.#hp <= 0 ? this.#wins++ : null;
+
+        console.log(`dealDamage : ${this.#hp} Wins ${this.#wins}`);
     }
 
+    heal(healPoint) {
+        const condition = healPoint + this.getHealth < this.getMaxHealth;
+        condition ? this.#hp += healPoint : this.#hp = this.#maxHp;
+        console.log(`Heal TRUE : HP = ${this.#hp}`)
+    }
 
+    addWin() {
+        this.#wins++
+    }
+
+    addLoss() {
+        this.#losses++
+    }
 }
 
 
 let firsFighter = new Fighter({name: "Maximus", damage: 25, hp: 100, strength: 50, agility: 15});
-let secondFighters = new Fighter({name: "Titan", damage: 50, hp: 1000, strength: 25, agility: 25});
-
-let name = firsFighter.getName
-// console.log(firsFighter.getHealth);
-console.log(name);
-
+let secondFighters = new Fighter({name: "Titan", damage: 50, hp: 10, strength: 25, agility: 25});
 
 console.log(firsFighter.attack(secondFighters));
 // console.log(secondFighters.getHealth);
