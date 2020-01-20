@@ -1,5 +1,4 @@
 class Fighter {
-
     constructor({name, damage, hp, strength, agility}) {
         let _name = name;
         let _damage = damage;
@@ -67,9 +66,3 @@ function battle(firstFighter, secondFighter) {
         console.log(`${secondFighter.getName()} is dead and can't fight! Restore HP`);
     }
 }
-
-
-let firsFighter = new Fighter({name: 'Maximus', damage: 50, hp: 100, strength: 20, agility: 20});
-let secondFighters = new Fighter({name: 'Titan', damage: 50, hp: 100, strength: 20, agility: 20});
-
-
