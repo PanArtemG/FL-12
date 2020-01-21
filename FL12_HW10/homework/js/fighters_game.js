@@ -45,24 +45,28 @@ class Fighter {
 
 function battle(firstFighter, secondFighter) {
     if ((firstFighter.getHealth() && secondFighter.getHealth()) > 0) {
-        firstFighter.attack(secondFighter);
-        if (secondFighter.getHealth()) {
-            secondFighter.attack(firstFighter);
-            if (firstFighter.getHealth()) {
-                battle(firstFighter, secondFighter)
-            } else {
-                secondFighter.addWin();
-                firstFighter.addLoss();
-                console.log(`${secondFighter.getName()} WON!`);
-            }
-        } else {
-            firstFighter.addWin();
-            secondFighter.addLoss();
-            console.log(`${firstFighter.getName()} WON!`);
-        }
+        round(firstFighter, secondFighter)
     } else if (firstFighter.getHealth <= 0) {
         console.log(`${firstFighter.getName()} is dead and can't fight! Restore HP`);
     } else {
         console.log(`${secondFighter.getName()} is dead and can't fight! Restore HP`);
+    }
+}
+
+function round (firstFighter, secondFighter) {
+    firstFighter.attack(secondFighter);
+    if (secondFighter.getHealth() > 0) {
+        secondFighter.attack(firstFighter);
+        if (firstFighter.getHealth() > 0) {
+            round(firstFighter, secondFighter)
+        } else {
+            secondFighter.addWin();
+            firstFighter.addLoss();
+            console.log(`${secondFighter.getName()} WON!`);
+        }
+    } else {
+        firstFighter.addWin();
+        secondFighter.addLoss();
+        console.log(`${firstFighter.getName()} WON!`);
     }
 }
