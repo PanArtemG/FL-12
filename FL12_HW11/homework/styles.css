@@ -1,1 +1,45 @@
 /* Todo: your styles go here*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    padding: 50px 100px;
+    background: linear-gradient(-45deg, #5449b6 0%, #6ba8dc 100%);
+    background-size: cover;
+}
+
+#root {
+    padding: 50px 100px;
+    border: 1px solid red;
+}
+
+div[type = 'folder'], div[type = 'file'] {
+    display: flex;
+    align-items: center;
+    height: 21px;
+    margin-bottom: 5px;
+    /*border: 1px solid black;*/
+}
+
+div[type = 'file'] {
+
+}
+
+.icon-folder {
+    color: sandybrown;
+    margin-right: 10px;
+}
+
+.icon-file {
+    color: aquamarine;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.active {
+    background-color: lightgrey;
+}
