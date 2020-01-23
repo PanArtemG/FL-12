@@ -39,8 +39,9 @@ const rootNode = document.getElementById('root');
 
 // Todo: your code goes here
 
-const wrap = document.createElement('div');
-wrap.classList.add('wrap');
+
+const wrap = document.createElement('div')
+wrap.classList.add('wrap')
 
 function createDom(structure, margin) {
     structure.map(el => {
@@ -83,12 +84,12 @@ function insertNode(el, node, iconItem, title, margLeft, type, iconClass, iconTy
 
     const wrap = document.createElement('div');
     wrap.classList.add('wrap');
-    const check = -1
-    if (structure.indexOf(el) !== check) {
+
+    if (structure.indexOf(el) !== -1) {
         rootNode.appendChild(node);
         node.classList.add('active');
         node.classList.add('folder');
-        node.classList.add('closed');
+        node.classList.add('closet');
         node.classList.remove('not-active');
     } else {
         rootNode.lastChild.appendChild(wrap);
@@ -100,39 +101,13 @@ function insertNode(el, node, iconItem, title, margLeft, type, iconClass, iconTy
 
 createDom(structure, 0);
 
-rootNode.addEventListener('click', (ev) => {
+rootNode.addEventListener("click", (ev) => {
     const target = ev.target;
-    const close = target.closest('div');
-    console.log(close);
-    if (close.getAttribute('class') === 'active folder closed') {
-        close.classList.remove('closed');
-        close.classList.add('open');
+    const close = target.closest("div");
+    // close.classList.add('closet')
+    if (close.getAttribute('class'))
         close.childNodes.forEach(el => {
-            el.classList.add('active');
+            el.classList.add('active')
             el.classList.remove('not-active')
-        })
-    } else if (close.getAttribute('class') === 'active folder open') {
-        close.classList.remove('open');
-        close.classList.add('closed');
-        close.childNodes.forEach((el, index) => {
-            if (index > 1) {
-                el.classList.add('not-active');
-                el.classList.remove('active')
-            }
-        })
-    }
-});
-
-rootNode.addEventListener('mouseover', (ev) => {
-    const target = ev.target;
-    const close = target.closest('div');
-    if (target !== rootNode) {
- close.style.border = '1px solid red' 
-}
-});
-
-rootNode.addEventListener('mouseout', (ev) => {
-    const target = ev.target;
-    const close = target.closest('div');
-    close.style.border = '1px solid transparent'
+        });
 });

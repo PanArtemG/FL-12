@@ -7,7 +7,7 @@
 
 body {
     height: 100vh;
-    padding: 50px 100px;
+    padding: 50px 10px;
     background: linear-gradient(-45deg, #5449b6 0%, #6ba8dc 100%);
     background-size: cover;
     font-family: sans-serif;
@@ -15,20 +15,25 @@ body {
 
 #root {
     padding: 50px 100px;
-    border: 1px solid red;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px solid transparent;
 }
 
 div[type = 'folder'], div[type = 'file'] {
     display: flex;
-    align-items: center;
-    height: 21px;
-    margin-bottom: 5px;
     cursor: pointer;
-    /*border: 1px solid black;*/
 }
 
 div[type = 'folder']:hover, div[type = 'file']:hover {
-    background-color: lightgrey;
+}
+
+.folder {
+    flex-direction: column;
 }
 
 .icon-folder {
@@ -42,7 +47,11 @@ div[type = 'folder']:hover, div[type = 'file']:hover {
 
 }
 
-
 .active {
-    background-color: lightgrey;
+    display: flex;
+}
+
+.not-active {
+    display: none;
+    background-color: red;
 }
