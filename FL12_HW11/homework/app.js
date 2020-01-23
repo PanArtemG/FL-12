@@ -40,67 +40,54 @@ const rootNode = document.getElementById('root');
 // Todo: your code goes here
 
 
-
-
-function createNodeItem(el, margin) {
-    // debugger
-    console.log(margin);
-    let margLeft = margin;
-    const node = document.createElement('div');
-    node.classList.add('not-active');
-
-    const title = document.createElement('span');
-    title.innerText = `${el.title}`;
-    const iconItem = document.createElement('i');
-
-
-    if (el.folder) {
-
-        node.setAttribute('type', 'folder');
-        iconItem.classList.add('material-icons', 'icon-folder');
-        iconItem.innerHTML = 'folder';
-
-        rootNode.appendChild(node);
-        node.appendChild(iconItem);
-        node.appendChild(title);
-
-
-        if (el.children) {
-            margLeft = margLeft + 10;
-            createDom(el.children, margLeft)
-        }
-    } else {
-        node.setAttribute('type', 'file');
-        iconItem.classList.add('material-icons', 'icon-file');
-        iconItem.innerHTML = 'folder';
-        iconItem.style.marginLeft = `${margin}`;
-
-        rootNode.appendChild(node)
-        node.appendChild(iconItem)
-        node.appendChild(title)
-    }
-}
-
 function createDom(structure, margin) {
     structure.map(el => {
         return createNodeItem(el, margin)
     });
 }
 
-createDom(structure, margin = 0);
+function createNodeItem(el, margin) {
+    let margLeft = margin;
+    const node = document.createElement('div');
+    node.classList.add('not-active');
 
-// function createChildForFolder(child) {
-//     const folder = document.createElement('div');
-//     folder.classList.add('folder', `${el.title}`, 'not-active');
-//
-//     const title = document.createElement('span')
-//     title.innerText = `${el.title}`;
-//
-//     const iconFolder = document.createElement('i');
-//     iconFolder.classList.add('material-icons', 'icon-folder');
-//     iconFolder.innerHTML = 'folder';
-//
-//     rootNode.appendChild(folder)
-//     folder.appendChild(iconFolder)
-//     folder.appendChild(title)
-// }
+    let title = document.createElement('span');
+    title.innerText = `${el.title || "Folder is empty"}`;
+
+    const iconItem = document.createElement('i');
+
+    if (el.folder) {
+        insertNode(node, iconItem, title, margLeft, 'folder', 'icon-folder', 'folder')
+
+        if (!el.children) {
+            margLeft += 25;
+            createNodeItem(el.children, margLeft)
+        } else if (el.folder && el.children) {
+            margLeft += 25;
+            createDom(el.children, margLeft)
+        }
+    } else {
+        insertNode(node, iconItem, title, margLeft, 'file', 'icon-file', 'insert_drive_file')
+    }
+}
+
+function insertNode(node, iconItem, title, margLeft, type, iconClass, iconType) {
+    node.setAttribute('type', type);
+    iconItem.classList.add('material-icons', iconClass);
+    iconItem.innerHTML = iconType;
+    iconItem.style.marginLeft = `${margLeft}px`;
+
+    rootNode.appendChild(node);
+    node.appendChild(iconItem);
+    node.appendChild(title);
+    node.style.marginLeft = `${margLeft}px`;
+}
+
+
+
+
+
+
+
+
+createDom(structure, 0);

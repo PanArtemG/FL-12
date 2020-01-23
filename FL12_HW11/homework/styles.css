@@ -10,6 +10,7 @@ body {
     padding: 50px 100px;
     background: linear-gradient(-45deg, #5449b6 0%, #6ba8dc 100%);
     background-size: cover;
+    font-family: sans-serif;
 }
 
 #root {
@@ -22,11 +23,12 @@ div[type = 'folder'], div[type = 'file'] {
     align-items: center;
     height: 21px;
     margin-bottom: 5px;
+    cursor: pointer;
     /*border: 1px solid black;*/
 }
 
-div[type = 'file'] {
-
+div[type = 'folder']:hover, div[type = 'file']:hover {
+    background-color: lightgrey;
 }
 
 .icon-folder {
@@ -35,10 +37,11 @@ div[type = 'file'] {
 }
 
 .icon-file {
-    color: aquamarine;
-    margin-left: 30px;
+    color: darkblue;
     margin-right: 10px;
+
 }
+
 
 .active {
     background-color: lightgrey;
