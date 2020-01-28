@@ -46,11 +46,6 @@
     background: rgba(255, 255, 255, .3);
 }
 
-.status-true {
-    background: rgba(200, 235, 111, .7);
-
-}
-
 .btn {
     padding: 10px;
     text-transform: uppercase;
@@ -96,4 +91,9 @@ input {
 
 .inactive {
     display: none;
+}
+
+
+.status-true {
+    background: rgba(200, 235, 111, .7);
 }
