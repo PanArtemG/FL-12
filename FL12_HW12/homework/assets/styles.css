@@ -43,6 +43,12 @@
     margin-bottom: 5px;
     padding: 0 20px;
     box-sizing: border-box;
+    background: rgba(255, 255, 255, .3);
+}
+
+.status-true {
+    background: rgba(200, 235, 111, .7);
+
 }
 
 .btn {
@@ -76,7 +82,6 @@ input {
     border: none;
     border-bottom: 1px solid #bbf0f3;
     background: inherit;
-    /*box-shadow: 0 0 5px 5px rgba(221, 221, 221, 1);*/
     border-radius: 5px;
 }
 

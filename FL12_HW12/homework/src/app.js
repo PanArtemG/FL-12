@@ -38,15 +38,17 @@ function createListItem() {
             itemTitle.innerText = `Name : ${el.name}`;
             itemContent.innerText = `Term : ${el.term}`;
             itemWrap.setAttribute('id', `${el._id}`);
-            itemWrap.setAttribute('class', 'term-item');
+            itemWrap.classList.add('term-item');
 
-            itemBtnWrap.setAttribute('class', 'btn-wrap');
+            itemBtnWrap.classList.add('btn-wrap');
 
             itemStatusBtn.innerText = 'Change Status';
             itemModifyBtn.innerText = 'modify';
 
-            itemStatusBtn.setAttribute('class', 'btn');
-            itemModifyBtn.setAttribute('class', 'btn');
+            itemStatusBtn.setAttribute('status', `${el.status}`);
+
+            itemStatusBtn.classList.add('btn', 'change-status');
+            itemModifyBtn.classList.add('btn');
 
             itemWrap.appendChild(itemTitle);
             itemWrap.appendChild(itemContent);
@@ -54,8 +56,26 @@ function createListItem() {
             itemBtnWrap.appendChild(itemStatusBtn);
             itemBtnWrap.appendChild(itemModifyBtn);
 
-            listTermContainer.appendChild(itemWrap)
+            itemWrap.classList.add(`${el.status ? 'status-true' : null}`);
 
+            listTermContainer.appendChild(itemWrap);
+
+            itemWrap.addEventListener('click', (ev) => {
+                let target = ev.target;
+                let status = target.getAttribute("status");
+                if (status) {
+                    let id = +ev.currentTarget.getAttribute('id');
+                    BDTerms.map(el => {
+                        if (el._id === id) {
+                            el.status = !el.status;
+                            itemWrap.classList.toggle('status-true');
+
+                            const jsonBD = JSON.stringify(BDTerms);
+                            localStorage.setItem('BDTerms', jsonBD);
+                        }
+                    });
+                }
+            })
         })
     } else {
         listTermContainer.innerHTML = `<h2>LIST TERMS EMPTY</h2>`
@@ -91,7 +111,6 @@ function loadListTerms() {
 }
 
 function createdNewTerm() {
-    console.log('createdNewTerm');
     let name = addNameInput.value;
     let term = addTermInput.value;
     if (name && term) {
@@ -104,7 +123,6 @@ function createdNewTerm() {
         };
         BDTerms.push(newTerm)
     }
-    console.log(BDTerms);
     const jsonBD = JSON.stringify(BDTerms);
     localStorage.setItem('BDTerms', jsonBD);
     resetInputValue();
