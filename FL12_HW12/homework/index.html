@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homework 12 - Simple TODO List</title>
-  <link rel="stylesheet" href="assets/styles.css">
+    <meta charset="UTF-8">
+    <title>Homework 12 - Simple TODO List</title>
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <div id="root"></div>
+<div id="root">
+    <div id="mainPage" class="main-page wrap">
+        <div class="main-page-header">
+            <h2>MAIN PAGE</h2>
+            <span id="addTermsBtn" class="add-terms-btn btn">ADD TERMS</span>
+        </div>
+        <div class="main-page-list">
+            <h2>LIST TERMS EMPTY</h2>
+        </div>
+    </div>
+    <div id="addPage" class="add-terms-page wrap inactive">
+        <h2>ADD TERMS</h2>
+        <div class="form-wrap">
+            <input id="addName" type="text" placeholder="Name">
+            <input id="addTerm" type="text" placeholder="Add terms">
+        </div>
+        <div class="add-terms-btn-wrap btn-wrap">
+            <span id="saveNewTermsBtn" class="add-terms-btn-save btn ">Save changes</span>
+            <span id="cancelNewTermBtn" class="add-terms-btn-cls btn">Cancel</span>
+        </div>
+    </div>
+    <div id="modifyPage" class="modify-page wrap inactive">
+        <h2>ADD TERMS</h2>
+        <div class="form-wrap">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Add terms">
+        </div>
+        <div class="modify-terms-btn-wrap btn-wrap">
+            <span class="add-terms-btn-save btn ">Save changes</span>
+            <span id="cancelModifyTermBtn" class="add-terms-btn-cls btn cancelBtn">Cancel</span>
+        </div>
+    </div>
+</div>
 
-  <script src="src/app.js"></script>
+<script src="src/app.js"></script>
 </body>
 </html>

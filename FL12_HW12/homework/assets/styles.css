@@ -1,2 +1,69 @@
 /* Your styles go here */
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 98vh;
+    background-image: linear-gradient(315deg, #bbf0f3 0%, #f6d285 74%);
+    font-family: sans-serif;
+}
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 10px 0;
+}
 
+.btn {
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 2px solid #bbf0f3;
+    cursor: pointer;
+}
+
+.btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    margin: 20px;
+}
+
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+input {
+    margin-bottom: 50px;
+    height: 40px;
+    width: 60%;
+    border: none;
+    border-bottom: 1px solid #bbf0f3;
+    background: inherit;
+    /*box-shadow: 0 0 5px 5px rgba(221, 221, 221, 1);*/
+    border-radius: 5px;
+}
+
+.main-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding: 5px 50px;
+    box-sizing: border-box;
+}
+
+.inactive {
+    display: none;
+}
