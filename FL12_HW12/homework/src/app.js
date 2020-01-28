@@ -53,7 +53,7 @@ function loadListTerms() {
     // debugger
     let BDTermsStorage = localStorage.getItem('BDTerms');
     console.log(!!BDTermsStorage);
-    if (BDTermsStorage !== undefined) {
+    if (BDTermsStorage !== "undefined") {
         BDTermsStorage = JSON.parse(BDTermsStorage);
         BDTermsStorage.forEach(el => {
             BDTerms.push(el)
@@ -122,8 +122,6 @@ function createListItem() {
                 }
             })
         })
-    } else {
-        listTermContainer.innerHTML = `<h2>LIST TERMS EMPTY</h2>`
     }
 }
 
