@@ -9,6 +9,7 @@ const addTermInput = document.getElementById('addTerm');
 
 const addTermsBtn = document.getElementById('addTermsBtn');
 const saveNewTermsBtn = document.getElementById('saveNewTermsBtn');
+const saveModifyBtn = document.getElementById('saveModifyBtn');
 const cancelNewTermBtn = document.getElementById('cancelNewTermBtn');
 const cancelModifyTermBtn = document.getElementById('cancelModifyTermBtn');
 
@@ -24,10 +25,50 @@ console.log(location.hash);
 
 loadListTerms();
 
+
+addTermsBtn.addEventListener('click', () => {
+    location.hash = hashList.addHash;
+    mainPage.classList.toggle('inactive');
+    addPage.classList.toggle('inactive');
+});
+
+saveNewTermsBtn.addEventListener('click', ev => {
+    createdNewTerm(ev)
+});
+
+cancelNewTermBtn.addEventListener('click', (ev) => {
+    closedBlock(ev)
+});
+
+cancelModifyTermBtn.addEventListener('click', (ev) => {
+    closedBlock(ev)
+});
+
+// saveModifyBtn.addEventListener('click', () => {
+//
+// })
+
+
+function loadListTerms() {
+    // debugger
+    let BDTermsStorage = localStorage.getItem('BDTerms');
+    console.log(!!BDTermsStorage);
+    if (BDTermsStorage !== undefined) {
+        BDTermsStorage = JSON.parse(BDTermsStorage);
+        BDTermsStorage.forEach(el => {
+            BDTerms.push(el)
+        });
+        createListItem();
+    } else {
+
+        listTermContainer.innerHTML = `<h2>LIST TERMS EMPTY</h2>`
+    }
+}
+
 function createListItem() {
     if (BDTerms.length) {
         listTermContainer.innerHTML = null;
-        BDTerms.map(el => {
+        BDTerms.forEach(el => {
             const itemWrap = document.createElement('div');
             const itemTitle = document.createElement('h3');
             const itemContent = document.createElement('p');
@@ -46,6 +87,7 @@ function createListItem() {
             itemModifyBtn.innerText = 'modify';
 
             itemStatusBtn.setAttribute('status', `${el.status}`);
+            itemModifyBtn.setAttribute('modify', 'true');
 
             itemStatusBtn.classList.add('btn', 'change-status');
             itemModifyBtn.classList.add('btn');
@@ -62,18 +104,21 @@ function createListItem() {
 
             itemWrap.addEventListener('click', (ev) => {
                 let target = ev.target;
-                let status = target.getAttribute("status");
+                let status = target.getAttribute('status');
+                let modify = target.getAttribute('modify');
+
                 if (status) {
                     let id = +ev.currentTarget.getAttribute('id');
-                    BDTerms.map(el => {
+                    BDTerms.forEach(el => {
                         if (el._id === id) {
                             el.status = !el.status;
                             itemWrap.classList.toggle('status-true');
-
                             const jsonBD = JSON.stringify(BDTerms);
                             localStorage.setItem('BDTerms', jsonBD);
                         }
                     });
+                } else if (modify) {
+                    closedBlock(ev)
                 }
             })
         })
@@ -82,35 +127,7 @@ function createListItem() {
     }
 }
 
-addTermsBtn.addEventListener('click', () => {
-    location.hash = hashList.addHash;
-    mainPage.classList.toggle('inactive');
-    addPage.classList.toggle('inactive');
-});
-
-saveNewTermsBtn.addEventListener('click', createdNewTerm);
-
-cancelNewTermBtn.addEventListener('click', () => {
-    closedBlock()
-});
-
-cancelModifyTermBtn.addEventListener('click', () => {
-    closedBlock()
-});
-
-
-function loadListTerms() {
-    let BDTermsStorage = localStorage.getItem('BDTerms');
-    if (BDTermsStorage) {
-        BDTermsStorage = JSON.parse(BDTermsStorage);
-        BDTermsStorage.map(el => {
-            BDTerms.push(el)
-        });
-    }
-    createListItem();
-}
-
-function createdNewTerm() {
+function createdNewTerm(ev) {
     let name = addNameInput.value;
     let term = addTermInput.value;
     if (name && term) {
@@ -123,10 +140,19 @@ function createdNewTerm() {
         };
         BDTerms.push(newTerm)
     }
+    saveStorage(BDTerms, ev)
+    // const jsonBD = JSON.stringify(BDTerms);
+    // localStorage.setItem('BDTerms', jsonBD);
+    // resetInputValue();
+    // closedBlock();
+    // createListItem();
+}
+
+function saveStorage(BDTerms, ev) {
     const jsonBD = JSON.stringify(BDTerms);
     localStorage.setItem('BDTerms', jsonBD);
     resetInputValue();
-    closedBlock();
+    closedBlock(ev);
     createListItem();
 }
 
@@ -135,13 +161,39 @@ function resetInputValue() {
     addTermInput.value = '';
 }
 
-function closedBlock() {
-    mainPage.classList.toggle('inactive');
-    if (location.hash === hashList.addHash) {
+function closedBlock(ev) {
+    let btn = ev.target;
+    let id = btn.getAttribute('id');
+    let modify = btn.getAttribute('modify');
+
+    if (id === 'cancelNewTermBtn') {
         addPage.classList.toggle('inactive');
-    } else {
+        location.hash = hashList.mainHash;
+        resetInputValue();
+    } else if (modify) {
+        let id = +btn.parentElement.parentElement.getAttribute('id');
+        modifyData(id);
         modifyPage.classList.toggle('inactive');
+        location.hash = hashList.editHash;
+    } else if (id === 'cancelModifyTermBtn') {
+        modifyPage.classList.toggle('inactive');
+        location.hash = hashList.mainHash;
+    } else if (id === 'saveNewTermsBtn') {
+        addPage.classList.toggle('inactive');
+        location.hash = hashList.mainHash;
+        resetInputValue();
     }
-    location.hash = hashList.mainHash;
-    resetInputValue()
+    mainPage.classList.toggle('inactive');
 }
+
+function modifyData(id) {
+    let modifyName = document.getElementById('modifyName');
+    let modifyTerm = document.getElementById('modifyTerm');
+    BDTerms.forEach(el => {
+        if (el._id === id) {
+            modifyName.value = el.name;
+            modifyTerm.value = el.term;
+        }
+    })
+}
+
