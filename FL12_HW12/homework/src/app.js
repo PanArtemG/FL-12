@@ -53,7 +53,7 @@ function loadListTerms() {
     // debugger
     let BDTermsStorage = localStorage.getItem('BDTerms');
     console.log(!!BDTermsStorage);
-    if (BDTermsStorage !== "undefined") {
+    if (BDTermsStorage !== 'undefined') {
         BDTermsStorage = JSON.parse(BDTermsStorage);
         BDTermsStorage.forEach(el => {
             BDTerms.push(el)
@@ -136,14 +136,9 @@ function createdNewTerm(ev) {
             term: term,
             date: new Date().getTime()
         };
-        BDTerms.push(newTerm)
+        BDTerms.push(newTerm);
+        saveStorage(BDTerms, ev)
     }
-    saveStorage(BDTerms, ev)
-    // const jsonBD = JSON.stringify(BDTerms);
-    // localStorage.setItem('BDTerms', jsonBD);
-    // resetInputValue();
-    // closedBlock();
-    // createListItem();
 }
 
 function saveStorage(BDTerms, ev) {
